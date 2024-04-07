@@ -1,0 +1,45 @@
+			RINP a1
+			IINP op
+WHILE_START1:			IEQL bflag2 11 op
+			ILSS bflag1 11 op
+			IADD bflag2 bflag2 bflag1
+			IEQL bflag3 op 14
+			ILSS bflag1 op 14
+			IADD bflag3 bflag3 bflag1
+			IMLT bflag4 bflag2 bflag3
+			JMPZ 13 bflag4
+			IASN bflag5 0
+			JUMP 14
+			IASN bflag5 1
+			JMPZ WHILE_END1 bflag5
+			IINP op
+			JUMP WHILE_START1
+WHILE_END1:			RINP a2
+			JUMP SWITCH_START1
+C1:			RADD tvar1 a1 a2
+			RPRT tvar1
+			JUMP SWITCH_EXIT1
+C2:			RSUB tvar2 a1 a2
+			RPRT tvar2
+			JUMP SWITCH_EXIT1
+C3:			RMLT tvar3 a1 a2
+			RPRT tvar3
+			JUMP SWITCH_EXIT1
+C4:			ITOR tvar4 0
+			REQL bflag6 a2 tvar4
+			JMPZ ELSE1 bflag6
+			JUMP SWITCH_EXIT1
+			JUMP IF_END1
+ELSE1:			RDIV tvar5 a1 a2
+			RPRT tvar5
+IF_END1:			JUMP SWITCH_EXIT1
+SWITCH_START1:			INQL bflag1 op 13
+			JMPZ C3 bflag1
+			INQL bflag1 op 12
+			JMPZ C2 bflag1
+			INQL bflag1 op 11
+			JMPZ C1 bflag1
+			JUMP C4
+SWITCH_EXIT1:			HALT
+
+Dor Elbaz --- CPL-to-Quad Compiler Project

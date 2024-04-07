@@ -1,0 +1,18 @@
+/* Calculates n! */
+
+n, result, counter: int;
+
+{
+    input(n);
+
+    counter = 1;
+    result = 1;
+
+    while (counter <= n)
+    {
+        result = result * counter;
+        counter = counter + 1;
+    }
+
+    output(result);
+}

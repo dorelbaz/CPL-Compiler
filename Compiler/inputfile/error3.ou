@@ -1,0 +1,13 @@
+/*  Variable definitions. */
+
+i : int;
+i : float;
+{
+    input(i);
+
+    while (i < 5)
+    {
+        j = j + 1;
+    }
+
+}

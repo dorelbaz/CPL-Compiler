@@ -1,0 +1,45 @@
+RINP a1
+IINP op
+IEQL bflag2 11 op
+ILSS bflag1 11 op
+IADD bflag2 bflag2 bflag1
+IEQL bflag3 op 14
+ILSS bflag1 op 14
+IADD bflag3 bflag3 bflag1
+IMLT bflag4 bflag2 bflag3
+JMPZ 13 bflag4
+IASN bflag5 0
+JUMP 14
+IASN bflag5 1
+JMPZ 17 bflag5
+IINP op
+JUMP 3
+RINP a2
+JUMP 36
+RADD tvar1 a1 a2
+RPRT tvar1
+JUMP 43
+RSUB tvar2 a1 a2
+RPRT tvar2
+JUMP 43
+RMLT tvar3 a1 a2
+RPRT tvar3
+JUMP 43
+ITOR tvar4 0
+REQL bflag6 a2 tvar4
+JMPZ 33 bflag6
+JUMP 43
+JUMP 35
+RDIV tvar5 a1 a2
+RPRT tvar5
+JUMP 43
+INQL bflag1 op 13
+JMPZ 25 bflag1
+INQL bflag1 op 12
+JMPZ 22 bflag1
+INQL bflag1 op 11
+JMPZ 19 bflag1
+JUMP 28
+HALT
+
+Dor Elbaz --- CPL-to-Quad Compiler Project

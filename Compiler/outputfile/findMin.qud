@@ -1,0 +1,10 @@
+RINP a
+RINP b
+RLSS bflag2 a b
+JMPZ 7 bflag2
+RPRT a
+JUMP 8
+RPRT b
+HALT
+
+Dor Elbaz --- CPL-to-Quad Compiler Project

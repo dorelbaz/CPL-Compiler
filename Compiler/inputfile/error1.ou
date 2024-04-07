@@ -1,0 +1,29 @@
+/* Illegal break and switch statements. */
+
+i : int;
+{
+
+
+    if (!(1 <= i && i <= 3))
+    {
+        break;
+    }
+    else {}
+
+
+    /* Missing default case. */
+    switch (i)
+    {
+        case 1:
+            output(i + i);
+            break;
+
+        case 2:
+
+        case 3:
+            output(i * i);            
+            break;  
+    }
+
+
+}

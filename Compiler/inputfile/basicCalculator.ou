@@ -1,0 +1,57 @@
+/* 
+
+Basic Calculator
+
+11 - for addition
+
+12 - for subtraction
+
+13 - for multiplication
+
+14 - for division   
+
+Input first operand, operation and second operand in this order.
+
+*/
+
+op : int;
+a1, a2: float;
+
+{
+
+    input(a1);
+
+    input(op);
+
+    while (!(11 <= op && op <= 14))
+    {
+        input(op);
+    }
+
+    input(a2);
+
+    switch (op)
+    {
+        case 11:
+            output(a1 + a2);
+            break;
+
+        case 12:
+            output(a1 - a2);
+            break;
+
+        case 13:
+            output(a1 * a2);
+            break;
+
+        default:
+            if (a2 == 0)
+            {
+                break;
+            }
+            else
+            {
+                output(a1 / a2);
+            }         
+    }
+}

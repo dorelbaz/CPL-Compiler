@@ -1,0 +1,13 @@
+/* Illegal id declaration. */
+
+   i, while, j, IADD: int;
+   k, m float;
+   3j, tvar7 : float;
+   n, n1, n1 : int
+   m : float;
+   aaaabbbbccccddddeeeeffffgggghhhhiiii : int;
+
+
+{
+      
+}

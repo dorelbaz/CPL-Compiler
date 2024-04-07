@@ -1,0 +1,14 @@
+/* Number related errors. */
+
+i, i2, i3: int;
+
+
+{
+    i = $5;
+    i = 5%;
+    i2 = 111111111111111111111111111111111111111111;
+    i3 = 10 , ;
+
+    /* Incomplete comment
+
+}

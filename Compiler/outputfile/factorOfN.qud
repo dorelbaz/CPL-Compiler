@@ -1,0 +1,14 @@
+IINP n
+IASN counter 1
+IASN result 1
+IEQL bflag2 counter n
+ILSS bflag1 counter n
+IADD bflag2 bflag2 bflag1
+JMPZ 11 bflag2
+IMLT result result counter
+IADD counter counter 1
+JUMP 4
+IPRT result
+HALT
+
+Dor Elbaz --- CPL-to-Quad Compiler Project

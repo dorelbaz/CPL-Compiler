@@ -1,0 +1,10 @@
+			RINP a
+			RINP b
+			RLSS bflag2 a b
+			JMPZ ELSE1 bflag2
+			RPRT a
+			JUMP IF_END1
+ELSE1:			RPRT b
+IF_END1:			HALT
+
+Dor Elbaz --- CPL-to-Quad Compiler Project
