@@ -15,7 +15,8 @@ Input first operand, operation and second operand in this order.
 */
 
 op : int;
-a1, a2: float;
+ a1, a2 : float;
+
 
 {
 
@@ -30,7 +31,7 @@ a1, a2: float;
 
     input(a2);
 
-    switch (op)
+    switch (11)
     {
         case 11:
             output(a1 + a2);

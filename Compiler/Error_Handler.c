@@ -17,7 +17,8 @@ const char *error_msgs[] = {
     "ID has already been defined",
     "ID has not been defined",
     "Illegal break statement",
-    "Can not convert float to int without cast",
+    "Illegal switch-case condition",
+    "Illegal assignment",
     "No input file(s) found",
     "Invalid file name"
 };

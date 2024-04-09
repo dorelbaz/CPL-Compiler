@@ -11,8 +11,8 @@ i : int;
     else {}
 
 
-    /* Missing default case. */
-    switch (i)
+    /* Illegal conditions and a missing default case. */
+    switch (3.6)
     {
         case 1:
             output(i + i);
@@ -20,7 +20,7 @@ i : int;
 
         case 2:
 
-        case 3:
+        case 3.5:
             output(i * i);            
             break;  
     }

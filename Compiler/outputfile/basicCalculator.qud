@@ -33,11 +33,11 @@ JUMP 35
 RDIV tvar5 a1 a2
 RPRT tvar5
 JUMP 43
-INQL bflag1 op 13
+INQL bflag1 11 13
 JMPZ 25 bflag1
-INQL bflag1 op 12
+INQL bflag1 11 12
 JMPZ 22 bflag1
-INQL bflag1 op 11
+INQL bflag1 11 11
 JMPZ 19 bflag1
 JUMP 28
 HALT

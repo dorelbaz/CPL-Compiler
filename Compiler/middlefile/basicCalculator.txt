@@ -33,11 +33,11 @@ C4:			ITOR tvar4 0
 ELSE1:			RDIV tvar5 a1 a2
 			RPRT tvar5
 IF_END1:			JUMP SWITCH_EXIT1
-SWITCH_START1:			INQL bflag1 op 13
+SWITCH_START1:			INQL bflag1 11 13
 			JMPZ C3 bflag1
-			INQL bflag1 op 12
+			INQL bflag1 11 12
 			JMPZ C2 bflag1
-			INQL bflag1 op 11
+			INQL bflag1 11 11
 			JMPZ C1 bflag1
 			JUMP C4
 SWITCH_EXIT1:			HALT

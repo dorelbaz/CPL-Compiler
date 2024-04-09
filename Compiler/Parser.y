@@ -174,7 +174,7 @@ assignment_stmt : ID '=' expression ';' {
             }
             else
             {
-                output_Error_Msg(CANNOT_CONVERT_FLOAT_TO_INT);
+                output_Error_Msg(ILLEGAL_ASSIGNMENT);
             }
         }
         else
@@ -410,17 +410,24 @@ var1 : /* empty */     {                                                       /
 
 */ 
 
-switch_stmt : SWITCH '(' expression ')'  var2  '{' caselist DEFAULT     {      /***** FIRST *****/
+switch_stmt : SWITCH '(' expression {
     
-    $8 = malloc(sizeof(Case));
-    if (!$8) 
+    if ($3.idtype == DOUBLE) 
+    {
+        output_Error_Msg(ILLEGAL_CONDITION);
+    }
+    
+} ')'  var2  '{' caselist DEFAULT     {                                      /***** FIRST *****/
+    
+    $9 = malloc(sizeof(Case));
+    if (!$9) 
     {
         output_Error_Msg(FAILED_TO_ALLOCATE_MEMORY); 
         return EXIT_FAILURE;
     } 
-    strcpy($8->case_label, Label_Generator("C",case_counter));
-    fprintf(intermediary_file, "%s:", $8->case_label); 
-    linsert($8->case_label, label_address);
+    strcpy($9->case_label, Label_Generator("C",case_counter));
+    fprintf(intermediary_file, "%s:", $9->case_label); 
+    linsert($9->case_label, label_address);
     case_counter++;
 
 }         ':' stmtlist '}'      {                                              /***** SECOND *****/
@@ -434,7 +441,7 @@ switch_stmt : SWITCH '(' expression ')'  var2  '{' caselist DEFAULT     {      /
     linsert(peek(label_stack).label, label_address);                                                                                                                
     pop(&label_stack); 
 
-    Case *caseptr = $7->next;
+    Case *caseptr = $8->next;
     while (caseptr) 
     {
         fprintf(intermediary_file, "\t\t\tINQL bflag1 %s %s\n\t\t\tJMPZ %s bflag1\n", $3.id, caseptr->case_condition, caseptr->case_label); 
@@ -442,13 +449,13 @@ switch_stmt : SWITCH '(' expression ')'  var2  '{' caselist DEFAULT     {      /
         caseptr = caseptr->next;
     }
 
-    fprintf(intermediary_file,"\t\t\tJUMP %s\n%s:",$8->case_label, exit_label);
+    fprintf(intermediary_file,"\t\t\tJUMP %s\n%s:",$9->case_label, exit_label);
     label_address++;
     linsert(exit_label, label_address);
-    free($8);
-    $8 = NULL;
+    free($9);
+    $9 = NULL;
                                                                                                                                                                                 
-    caseptr = $7;
+    caseptr = $8;
     Case **caseptr2 = &caseptr;
     while (*caseptr2)
     {
@@ -494,7 +501,7 @@ caselist :    caselist CASE NUM   {                                            /
         
     if ($3.idtype == DOUBLE)
     {
-        output_Error_Msg(CANNOT_CONVERT_FLOAT_TO_INT);
+        output_Error_Msg(ILLEGAL_CONDITION);
     }
     else
     {
