@@ -11,7 +11,7 @@ Each variable must be defined once.
 
 Dividing two integers gives their whole quotient.
 
-The conversion operation is valid when its two sides are of the same type or the left side is a float. ‬‬
+The conversion operation is valid when its two sides are of the same type or the left side is a float.
 In the case of converting an int type value into a float type variable, the value is converted to float.
 
 The break statement can only appear inside a while loop or inside a switch. Its meaning
