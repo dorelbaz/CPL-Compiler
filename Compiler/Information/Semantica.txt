@@ -1,5 +1,5 @@
 Numeric constants without a decimal point are of of type int. Otherwise they are of type float.
-When at least one of the operands of an arithmetic binary operator (plus, minus...) is of type ‬
+When at least one of the operands of an arithmetic binary operator (plus, minus...) is of type
 float then the result of the operator is of type float otherwise (that is, the two operands are
 of type int) the result is of type int.
 
@@ -18,7 +18,7 @@ The break statement can only appear inside a while loop or inside a switch. Its 
 is the same as in the C language. In the absence of break in the code for case (in the switch statement) then after executing the code
 for that case, we continue and execute the code for the next case (as in the C language).
 
-The expression that appears after switch must be of type int. So is any number that appears ‬
+The expression that appears after switch must be of type int. So is any number that appears
 after case.
 
 The meaning of static_cast is similar to the meaning in the C++ language.
